@@ -1,0 +1,12 @@
+chromedriver.exe
+- https://sites.google.com/a/chromium.org/chromedriver/downloads
+- local version: 2.35
+- win32
+
+WebDriver.dll
+- Extracted from NuGet package reference
+- local version: 3.8.0
+
+WebDriver.Support.dll
+- Extracted from NuGet package reference
+- local version: 3.8.0
