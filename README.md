@@ -36,9 +36,9 @@ $message = "Hello World!"
 function Write-Message()
 {
     Write-Host $message
-    # Call the function
-    Write-Message
 }
+# Call the function
+Write-Message
 ````
  > "Hello World!"
  
