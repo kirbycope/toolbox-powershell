@@ -48,7 +48,7 @@ function Get-LatestDownloadUrlChromeDriver {
     # Navigate to the page and find the latest download link
     $DownloadPageUrl = "https://chromedriver.chromium.org/downloads"
     $DownloadPage = Invoke-WebRequest -Uri $DownloadPageUrl
-    $LatestDownloadUrl = ($DownloadPage.links | Where-Object {$_.href -like "*chromedriver.storage.googleapis.com/index.html?path=*"} | Select-Object -First 1).href
+    $LatestDownloadUrl = ($DownloadPage.links | Where-Object {$_.href -like "*chromedriver.storage.googleapis.com/index.html?path=*"} | Select-Object -First 2 | Select-Object -Last 1).href
     $Tag = $LatestDownloadUrl.Substring($LatestDownloadUrl.IndexOf("=")+1)                   
     $ChromeDriverUrl = "https://chromedriver.storage.googleapis.com/$($Tag)chromedriver_win32.zip"
     
