@@ -1,0 +1,15 @@
+# Allow the current user to run this script
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+# Define the root directory
+$rootDirectory = Split-Path -Path $psISE.CurrentFile.FullPath | Split-Path -Parent  | Split-Path -Parent
+
+# Define each 'bin' directory
+$path1 = "$rootDirectory\CDC IPSAS Web API CRM Manager\CDC.IPSAS.CRM.Manager.API\bin"
+$path2 = "$rootDirectory\CDC.IPSAS.HighTrustAppWeb\bin"
+$path3 = "$rootDirectory\CDC_IPSAS.Portal\bin"
+
+# Delete each bin directory
+Remove-Item $path1 -recurse -force -ErrorAction SilentlyContinue
+Remove-Item $path2 -recurse -force -ErrorAction SilentlyContinue
+Remove-Item $path3 -recurse -force -ErrorAction SilentlyContinue
