@@ -19,7 +19,7 @@ $testDllPath = "C:\Users\timothy.cope\Source\Repos\example\example\bin\$configur
 # The filter to apply
 $filter = ""
 # The logger to use
-$logger = "/Logger:trx;LogFileName=cdc_ipsas-dev.trx"
+$logger = "/Logger:trx;LogFileName=TestResults.trx"
 
 #-- _this_ script vars
 $powershelScript = "C:\Users\timothy.cope\Scripts\tests-build-run-push.ps1"
