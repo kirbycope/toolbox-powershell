@@ -6,7 +6,7 @@
 #  </appSettings>
 
 # Allow the current user to run this script
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned;
 
 # Define the root directory of the project (based off this script's expected location)
 $rootDirectory = Split-Path -Path $psISE.CurrentFile.FullPath -Parent | Split-Path -Parent | Split-Path -Parent;
@@ -28,10 +28,8 @@ $webConfig = "$configDirectory\web.config";
 # (Temporarily) Rename the app.config to web.config
 Rename-Item -Path "$appConfig" "$webConfig"
 
-# Print the command
+# Encrypt the config
 "$regiis -pef $pef $configDirectory";
-
-# Execute the command
 & $regiis -pef $pef $configDirectory;
 
 # Rename the web.config [back] to app.config

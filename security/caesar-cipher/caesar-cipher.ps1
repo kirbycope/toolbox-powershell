@@ -1,5 +1,5 @@
 ﻿# Allow the current user to run this script
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned;
 
 # Set the source here
 [string]$source = "foo";
@@ -29,8 +29,8 @@ function Cipher-String([string]$source, [Int16]$shift)
     return $buffer -join ""
 }
 
-# Execute the function
-$caesar = Cipher-String $source $shift
+# Encrypt the string
+$caesar = Cipher-String $source $shift;
 
 #Write result to host
-Write-Host "Caesar Value: $caesar"
+Write-Host "Caesar Value: $caesar";

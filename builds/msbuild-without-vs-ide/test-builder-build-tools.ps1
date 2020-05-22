@@ -1,5 +1,5 @@
 ﻿# Allow the current user to run this script
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned;
 
 # Define the root directory
 $rootDirectory = Split-Path -Path $psISE.CurrentFile.FullPath -Parent | Split-Path -Parent | Split-Path -Parent;
@@ -16,7 +16,7 @@ $nugetExe = "$rootDirectory\nuget.exe";
 
 # Download the Nuget executable, if necessary
 if ( (Test-Path $nugetExe -PathType Leaf) -eq $false) {
-    Invoke-WebRequest $nugetUrl -Outfile $nugetExe
+    Invoke-WebRequest $nugetUrl -Outfile $nugetExe;
 }
 
 # Restore NuGet packages

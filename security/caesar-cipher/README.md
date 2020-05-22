@@ -1,7 +1,8 @@
-# PowerShell ISE Scripts - Caesar Cipher
-This script will cipher/decipher a string using a known shift value.
+# Description
+Demonstrates the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
 
-## Encrypting via PowerShell ISE
-1. Open the .ps1 file using PowerShell ISE
-   - Change the values as needed for `$source` and `$shift`
-2. Run the Script (F5)
+# What the script does
+1. Encrypt the string  
+   1. `$caesar = Cipher-String $source $shift;`
+1. Write result to host
+   1. `Write-Host "Caesar Value: $caesar";`
