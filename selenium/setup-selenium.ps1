@@ -43,8 +43,8 @@ function Get-LatestDownloadUrlSelenium {
 
     # Navigate to the page and find the latest download link
     $DownloadPageUrl = "https://selenium.dev/downloads/"
-    $SeleniumStandaloneServerUrl = (Invoke-WebRequest -UseBasicParsing $DownloadPageUrl).Content | %{[regex]::matches($_, '(?:<a href="https://bit.ly)(.*)(?:">)').Groups[1].Value}
-    $SeleniumStandaloneServerUrl = "https://bit.ly$SeleniumStandaloneServerUrl"
+    $SeleniumStandaloneServerUrl = (Invoke-WebRequest -UseBasicParsing $DownloadPageUrl).Content | %{[regex]::matches($_, '(?:<a href="https://selenium-release.storage.googleapis.com)(.*)(?:">)').Groups[1].Value}
+    $SeleniumStandaloneServerUrl = "https://selenium-release.storage.googleapis.com$SeleniumStandaloneServerUrl"
 
     # Post-Event Message
     Write-Host "  => $SeleniumStandaloneServerUrl" -ForegroundColor Green
